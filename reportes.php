@@ -5,7 +5,7 @@
 <script src="assets/js/hann.js" type="text/javascript" charset="utf-8"></script>
 
 <div class="outer">
-	<div class="inner bg-light lter">
+	<div class="inner bg-light lter" style="color: #585858;">
 		<div class="row">
 
 			<div class="col-lg-12">
@@ -27,13 +27,73 @@
 			
 		</div>
 
+<style type="text/css" media="screen">
+	.btnboxito {
+		padding: 25px 10px; 
+		font-weight: bolder;
+		font-size: 13px;
+	}
+	
+</style>
+
+		Caja
 		<div class="row">
-			<div class="col-lg-12">
-				<div class="box" style="padding: 10px;">
-					hanntronico
-					
+
+			<a href="javascript:;">
+			<div class="col-lg-2">
+				<div class="box" style="text-align: center;">
+					<div class="bg-light btnboxito">
+						<i class="fa fa-list-alt"></i><br>
+						Flujo de Caja
+					</div>
 				</div>
 			</div>
+			</a>
+			
+			<a href="javascript:;">
+			<div class="col-lg-2">
+				<div class="box" style="text-align: center;">
+					<div class="bg-light btnboxito">
+						<i class="fa fa-list-alt"></i><br>
+						Resumen de Caja
+					</div>
+				</div>
+			</div>
+			</a>
+
+			<a href="javascript:;">
+			<div class="col-lg-2">
+				<div class="box" style="text-align: center;">
+					<div class="bg-light btnboxito">
+						<i class="fa fa-list-alt"></i><br>
+						Registrar depósito
+					</div>
+				</div>
+			</div>
+			</a>
+
+			<a href="javascript:;">
+			<div class="col-lg-2">
+				<div class="box" style="text-align: center;">
+					<div class="bg-light btnboxito">
+						<i class="fa fa-list-alt"></i><br>
+						Registrar retiro
+					</div>
+				</div>
+			</div>
+			</a>
+			
+			<a href="javascript:;">
+			<div class="col-lg-2">
+				<div class="box" style="text-align: center;">
+					<div class="bg-light btnboxito">
+						<i class="fa fa-list-alt"></i><br>
+						Registrar gasto
+					</div>
+				</div>
+			</div>
+			</a>
+		
 		</div>
 
 		<div style="height: 300px;"></div>  
