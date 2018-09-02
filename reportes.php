@@ -33,17 +33,30 @@
 		font-weight: bolder;
 		font-size: 13px;
 	}
+
+	.btnboxito i {
+		font-size: 28px; 
+		margin-bottom: 10px;
+	}
+
+	.titulo {
+		padding: 5px 8px;
+		font-size: 16px;
+		font-weight: bold;
+	}
 	
 </style>
 
-		Caja
+		<div class="titulo">
+			Caja
+		</div>
+		
 		<div class="row">
-
 			<a href="javascript:;">
 			<div class="col-lg-2">
 				<div class="box" style="text-align: center;">
 					<div class="bg-light btnboxito">
-						<i class="fa fa-list-alt"></i><br>
+						<i class="fa fa-random"></i><br>
 						Flujo de Caja
 					</div>
 				</div>
@@ -54,7 +67,7 @@
 			<div class="col-lg-2">
 				<div class="box" style="text-align: center;">
 					<div class="bg-light btnboxito">
-						<i class="fa fa-list-alt"></i><br>
+						<i class="fa fa-book"></i><br>
 						Resumen de Caja
 					</div>
 				</div>
@@ -65,7 +78,7 @@
 			<div class="col-lg-2">
 				<div class="box" style="text-align: center;">
 					<div class="bg-light btnboxito">
-						<i class="fa fa-list-alt"></i><br>
+						<i class="fa fa-long-arrow-right"></i><br>
 						Registrar depósito
 					</div>
 				</div>
@@ -76,7 +89,7 @@
 			<div class="col-lg-2">
 				<div class="box" style="text-align: center;">
 					<div class="bg-light btnboxito">
-						<i class="fa fa-list-alt"></i><br>
+						<i class="fa fa-long-arrow-left"></i><br>
 						Registrar retiro
 					</div>
 				</div>
@@ -87,13 +100,63 @@
 			<div class="col-lg-2">
 				<div class="box" style="text-align: center;">
 					<div class="bg-light btnboxito">
-						<i class="fa fa-list-alt"></i><br>
+						<i class="fa fa-money"></i><br>
 						Registrar gasto
 					</div>
 				</div>
 			</div>
 			</a>
+		</div>
+
+		<div class="titulo">
+			Clientes
+		</div>
 		
+		<div class="row">
+			<a href="javascript:;">
+			<div class="col-lg-2">
+				<div class="box" style="text-align: center;">
+					<div class="bg-light btnboxito">
+						<i class="fa fa-random"></i><br>
+						Por orden alfabético
+					</div>
+				</div>
+			</div>
+			</a>
+			
+			<a href="javascript:;">
+			<div class="col-lg-2">
+				<div class="box" style="text-align: center;">
+					<div class="bg-light btnboxito">
+						<i class="fa fa-book"></i><br>
+						Por mejor puntuación
+					</div>
+				</div>
+			</div>
+			</a>
+
+			<a href="javascript:;">
+			<div class="col-lg-2">
+				<div class="box" style="text-align: center;">
+					<div class="bg-light btnboxito">
+						<i class="fa fa-long-arrow-right"></i><br>
+						Cumpleañeros del mes
+					</div>
+				</div>
+			</div>
+			</a>
+
+			<a href="javascript:;">
+			<div class="col-lg-2">
+				<div class="box" style="text-align: center;">
+					<div class="bg-light btnboxito">
+						<i class="fa fa-long-arrow-left"></i><br>
+						Sin actividad reciente
+					</div>
+				</div>
+			</div>
+			</a>
+			
 		</div>
 
 		<div style="height: 300px;"></div>  
