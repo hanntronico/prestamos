@@ -93,7 +93,7 @@
           </li> 
 
           <li>
-            <a href="#">
+            <a href="javascript:;" onclick="cargare('reportes.php'); return false;">
               <i class="fa fa-file-text"></i>
               <span class="link-title">&nbsp;&nbsp;Reportes</span>
               <!-- <span class="fa arrow"></span> -->
