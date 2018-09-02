@@ -1,0 +1,27 @@
+<p style="text-align:center"><span style="font-size:16px"><u><strong>CONTRATO DE PRENDA</strong></u></span></p>
+
+<p style="text-align:justify">Contrato celebrado en la ciudad de Chiclayo, con fecha {{FECHA}} y para lo mismo comparecen los Se&ntilde;ores:&nbsp;{{NOMBRE}}, identificado con DNI N&ordm; {{DNI}} de nacionalidad Peruana, con domicilio en {{DIRECCION}}, persona que en lo sucesivo se&nbsp;le denominar&aacute; como <strong>&quot;El deudor&quot;</strong>; y por la otra parte, el Sr. Jimmy Tayron Manay Limo, identificado con DNI N&ordm; 41568906; quien declara ser mayor de edad, con su domicilio en la calle Mitimaes N&ordm; 443, Distrito La Victoria, a quien en adelante se le denominar&aacute; <strong>&quot;El acreedor&quot;</strong>; ambas partes reconocen que se encuentran aptos en sus facultades para celebrar este contrato y se sujetar&aacute;n a las siguientes declaraciones y cl&aacute;usulas:</p>
+
+<p style="text-align:center"><strong>DECLARACIONES:</strong></p>
+
+<p style="text-align:justify">A. Declara <strong>&quot;El deudor&quot;</strong> ser propietario de {{PRENDA}} cual tiene las siguientes caracter&iacute;sticas.</p>
+
+<p style="text-align:justify">{{OBSERVACIONES}}</p>
+
+<p style="text-align:justify">B. <strong>&quot;El deudor&quot;</strong> manifiesta, no s&oacute;lo ser propietario del BIEN, sino que adem&aacute;s no adeudar suma alguna derivada de su adquisici&oacute;n; asimismo, declara que sobre aquel no existe negocio, acto o contrato, cargas o gravamenes de cualquier naturaleza, ni recae medida judicial o extrajudicial que pudiera limitar su libre disposici&oacute;n o el derecho de garant&iacute;a constituido a favor de El Acreedor, asumiendo expresa responsabilidad civil y penal por la veracidad de dicha declaraci&oacute;n.</p>
+
+<p style="text-align:justify">C. <strong>&quot;El deudor&quot;</strong> declara que con fecha {{FECHA}} recibi&oacute; un pr&eacute;stamo de {{MONTO}} Soles, el deudor se compromete a devolver en un plazo de {{PLAZO}} d&iacute;as. Las partes acordaron la celebraci&oacute;n de un contrato de prenda para la que se acatar&aacute;n a las cl&aacute;usulas siguientes.</p>
+
+<p style="text-align:center"><strong>CL&Aacute;USULAS:</strong></p>
+
+<p style="text-align:justify">Primera..- Como garant&iacute;a para la deuda contra&iacute;da con <strong>&quot;El Acreedor&quot;</strong> la parte deudora, da en prenda los art&iacute;culos mencionados en el punto &quot;A&quot;, de las declaraciones de este contrato, las cuales se encontrar&aacute;n en completa disposici&oacute;n de <strong>&quot;El acreedor&quot;</strong> durante el tiempo que tarde en saldarse dicha deuda.</p>
+
+<p style="text-align:justify">Segunda.- En caso de que el deudor incumpla con lo acordado en sus declaraciones del punto &quot;C&quot; de este contrato <strong>&quot;El acreedor&quot;</strong> podr&aacute; vender el bien o prenda ofrecida y entregada, a fin de restituirse el valor de la deuda correspondiente.</p>
+
+<p style="text-align:center">Chiclayo, {{FECHA}}.</p>
+
+<p>&nbsp;</p>
+
+<p>____________________&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;_______________________<br />
+&nbsp;El deudor&quot;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&quot;El acreedor&quot;<br />
+DNI: {{DNI}}&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;DNI:&nbsp;41568906</p>
