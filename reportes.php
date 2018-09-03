@@ -219,7 +219,7 @@
 			<div class="col-lg-2">
 				<div class="box" style="text-align: center;">
 					<div class="bg-light btnboxito">
-						<i class="fa fa-check-square"></i><br>
+						<i class="fa fa-shopping-cart"></i><br>
 						Compras
 					</div>
 				</div>
@@ -230,7 +230,7 @@
 			<div class="col-lg-2">
 				<div class="box" style="text-align: center;">
 					<div class="bg-light btnboxito">
-						<i class="fa fa-minus-square"></i><br>
+						<i class="fa fa-credit-card"></i><br>
 						Ventas
 					</div>
 				</div>
@@ -241,7 +241,7 @@
 			<div class="col-lg-2">
 				<div class="box" style="text-align: center;">
 					<div class="bg-light btnboxito">
-						<i class="fa fa-times-circle"></i><br>
+						<i class="fa fa-bookmark"></i><br>
 						Apartados vigentes
 					</div>
 				</div>
@@ -252,7 +252,7 @@
 			<div class="col-lg-2">
 				<div class="box" style="text-align: center;">
 					<div class="bg-light btnboxito">
-						<i class="fa fa-tag"></i><br>
+						<i class="fa fa-bookmark-o"></i><br>
 						Apartados vencidos
 					</div>
 				</div>
@@ -267,7 +267,7 @@
 			<div class="col-lg-2">
 				<div class="box" style="text-align: center;">
 					<div class="bg-light btnboxito">
-						<i class="fa fa-check-square"></i><br>
+						<i class="fa fa-briefcase"></i><br>
 						Prendas empeñadas
 					</div>
 				</div>
@@ -278,7 +278,7 @@
 			<div class="col-lg-2">
 				<div class="box" style="text-align: center;">
 					<div class="bg-light btnboxito">
-						<i class="fa fa-minus-square"></i><br>
+						<i class=" fa fa-star-half-empty"></i><br>
 						Prendas en venta
 					</div>
 				</div>
@@ -289,7 +289,7 @@
 			<div class="col-lg-2">
 				<div class="box" style="text-align: center;">
 					<div class="bg-light btnboxito">
-						<i class="fa fa-times-circle"></i><br>
+						<i class="fa fa-bullseye"></i><br>
 						Prendas apartardas
 					</div>
 				</div>
@@ -304,7 +304,7 @@
 			<div class="col-lg-2">
 				<div class="box" style="text-align: center;">
 					<div class="bg-light btnboxito">
-						<i class="fa fa-check-square"></i><br>
+						<i class="fa fa-file-excel-o"></i><br>
 						Respaldo en Excel
 					</div>
 				</div>
