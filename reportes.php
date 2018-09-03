@@ -31,7 +31,7 @@
 	.btnboxito {
 		padding: 25px 10px; 
 		font-weight: bolder;
-		font-size: 13px;
+		font-size: 12px;
 	}
 
 	.btnboxito i {
@@ -117,7 +117,7 @@
 			<div class="col-lg-2">
 				<div class="box" style="text-align: center;">
 					<div class="bg-light btnboxito">
-						<i class="fa fa-random"></i><br>
+						<i class="fa fa-sort-alpha-asc"></i><br>
 						Por orden alfabético
 					</div>
 				</div>
@@ -128,7 +128,7 @@
 			<div class="col-lg-2">
 				<div class="box" style="text-align: center;">
 					<div class="bg-light btnboxito">
-						<i class="fa fa-book"></i><br>
+						<i class="fa fa-star"></i><br>
 						Por mejor puntuación
 					</div>
 				</div>
@@ -139,7 +139,7 @@
 			<div class="col-lg-2">
 				<div class="box" style="text-align: center;">
 					<div class="bg-light btnboxito">
-						<i class="fa fa-long-arrow-right"></i><br>
+						<i class="fa fa-calendar"></i><br>
 						Cumpleañeros del mes
 					</div>
 				</div>
@@ -150,13 +150,74 @@
 			<div class="col-lg-2">
 				<div class="box" style="text-align: center;">
 					<div class="bg-light btnboxito">
-						<i class="fa fa-long-arrow-left"></i><br>
+						<i class="fa fa-thumbs-down"></i><br>
 						Sin actividad reciente
 					</div>
 				</div>
 			</div>
 			</a>
+		</div>
+
+		<div class="titulo">
+			Préstamos
+		</div>
+		
+		<div class="row">
+			<a href="javascript:;">
+			<div class="col-lg-2">
+				<div class="box" style="text-align: center;">
+					<div class="bg-light btnboxito">
+						<i class="fa fa-check-square"></i><br>
+						Vigentes
+					</div>
+				</div>
+			</div>
+			</a>
 			
+			<a href="javascript:;">
+			<div class="col-lg-2">
+				<div class="box" style="text-align: center;">
+					<div class="bg-light btnboxito">
+						<i class="fa fa-minus-square"></i><br>
+						Por vencer
+					</div>
+				</div>
+			</div>
+			</a>
+
+			<a href="javascript:;">
+			<div class="col-lg-2">
+				<div class="box" style="text-align: center;">
+					<div class="bg-light btnboxito">
+						<i class="fa fa-times-circle"></i><br>
+						Vencidos
+					</div>
+				</div>
+			</div>
+			</a>
+
+			<a href="javascript:;">
+			<div class="col-lg-2">
+				<div class="box" style="text-align: center;">
+					<div class="bg-light btnboxito">
+						<i class="fa fa-tag"></i><br>
+						Expirados
+					</div>
+				</div>
+			</div>
+			</a>
+
+			<a href="javascript:;">
+			<div class="col-lg-2">
+				<div class="box" style="text-align: center;">
+					<div class="bg-light btnboxito">
+						<i class="fa fa-legal"></i><br>
+						Liquidados
+					</div>
+				</div>
+			</div>
+			</a>			
+		
 		</div>
 
 		<div style="height: 300px;"></div>  
