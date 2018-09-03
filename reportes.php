@@ -40,16 +40,13 @@
 	}
 
 	.titulo {
-		padding: 5px 8px;
+		padding: 15px 8px 1px;
 		font-size: 16px;
 		font-weight: bold;
 	}
-	
 </style>
 
-		<div class="titulo">
-			Caja
-		</div>
+		<div class="titulo">Caja</div>
 		
 		<div class="row">
 			<a href="javascript:;">
@@ -108,9 +105,7 @@
 			</a>
 		</div>
 
-		<div class="titulo">
-			Clientes
-		</div>
+		<div class="titulo">Clientes</div>
 		
 		<div class="row">
 			<a href="javascript:;">
@@ -158,9 +153,7 @@
 			</a>
 		</div>
 
-		<div class="titulo">
-			Préstamos
-		</div>
+		<div class="titulo">Préstamos</div>
 		
 		<div class="row">
 			<a href="javascript:;">
@@ -217,10 +210,110 @@
 				</div>
 			</div>
 			</a>			
-		
 		</div>
 
+		<div class="titulo">Compras, ventas y apartados</div>
+		
+		<div class="row">
+			<a href="javascript:;">
+			<div class="col-lg-2">
+				<div class="box" style="text-align: center;">
+					<div class="bg-light btnboxito">
+						<i class="fa fa-check-square"></i><br>
+						Compras
+					</div>
+				</div>
+			</div>
+			</a>
+			
+			<a href="javascript:;">
+			<div class="col-lg-2">
+				<div class="box" style="text-align: center;">
+					<div class="bg-light btnboxito">
+						<i class="fa fa-minus-square"></i><br>
+						Ventas
+					</div>
+				</div>
+			</div>
+			</a>
+
+			<a href="javascript:;">
+			<div class="col-lg-2">
+				<div class="box" style="text-align: center;">
+					<div class="bg-light btnboxito">
+						<i class="fa fa-times-circle"></i><br>
+						Apartados vigentes
+					</div>
+				</div>
+			</div>
+			</a>
+
+			<a href="javascript:;">
+			<div class="col-lg-2">
+				<div class="box" style="text-align: center;">
+					<div class="bg-light btnboxito">
+						<i class="fa fa-tag"></i><br>
+						Apartados vencidos
+					</div>
+				</div>
+			</div>
+			</a>
+		</div>
+
+		<div class="titulo">Inventario</div>
+		
+		<div class="row">
+			<a href="javascript:;">
+			<div class="col-lg-2">
+				<div class="box" style="text-align: center;">
+					<div class="bg-light btnboxito">
+						<i class="fa fa-check-square"></i><br>
+						Prendas empeñadas
+					</div>
+				</div>
+			</div>
+			</a>
+			
+			<a href="javascript:;">
+			<div class="col-lg-2">
+				<div class="box" style="text-align: center;">
+					<div class="bg-light btnboxito">
+						<i class="fa fa-minus-square"></i><br>
+						Prendas en venta
+					</div>
+				</div>
+			</div>
+			</a>
+
+			<a href="javascript:;">
+			<div class="col-lg-2">
+				<div class="box" style="text-align: center;">
+					<div class="bg-light btnboxito">
+						<i class="fa fa-times-circle"></i><br>
+						Prendas apartardas
+					</div>
+				</div>
+			</div>
+			</a>
+		</div>
+
+		<div class="titulo">Respaldo</div>
+		
+		<div class="row">
+			<a href="javascript:;">
+			<div class="col-lg-2">
+				<div class="box" style="text-align: center;">
+					<div class="bg-light btnboxito">
+						<i class="fa fa-check-square"></i><br>
+						Respaldo en Excel
+					</div>
+				</div>
+			</div>
+			</a>
+		</div>		
+
+
 		<div style="height: 300px;"></div>  
-		<div style="height: 300px;"></div>  
+
 	</div>
 </div>
