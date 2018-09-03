@@ -2,7 +2,8 @@
 
 function Conectarse()
 { 
-	if (!($enlace=mysql_connect("localhost","root","*274053*")))
+	// if (!($enlace=mysql_connect("localhost","root","*274053*")))
+	if (!($enlace=mysql_connect("localhost","root","*123456*")))
 	{
 	echo "ERROR EN LA CONEXION: NUEVOS ELEMENTOS HAN SIDO CREADOS";
 	exit();
