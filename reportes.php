@@ -51,7 +51,7 @@
 		
 		<div class="row">
 			<div class="col-lg-2">
-				<a href="javascript:;">
+				<a href="javascript:;" onclick="cargare('flujo_caja.php'); return false;">
 					<div class="box" style="text-align: center;">
 						<div class="bg-light btnboxito">
 							<i class="fa fa-random"></i><br>
@@ -110,7 +110,7 @@
 		
 		<div class="row">
 			<div class="col-lg-2">
-				<a href="javascript:;">
+				<a href="javascript:;" onclick="cargare('rpt_clientes_alfa.php'); return false;">
 					<div class="box" style="text-align: center;">
 						<div class="bg-light btnboxito">
 							<i class="fa fa-sort-alpha-asc"></i><br>
@@ -132,7 +132,7 @@
 			</div>
 
 			<div class="col-lg-2">
-				<a href="javascript:;">
+				<a href="javascript:;" onclick="cargare('rpt_clientes_cumple.php'); return false;" >
 					<div class="box" style="text-align: center;">
 						<div class="bg-light btnboxito">
 							<i class="fa fa-calendar"></i><br>
