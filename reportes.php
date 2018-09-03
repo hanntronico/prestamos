@@ -158,7 +158,7 @@
 		
 		<div class="row">
 			<div class="col-lg-2">
-				<a href="javascript:;">
+				<a href="javascript:;" onclick="cargare('rpt_prestamos_vigentes.php'); return false;">
 					<div class="box" style="text-align: center;">
 						<div class="bg-light btnboxito">
 							<i class="fa fa-check-square"></i><br>
@@ -180,7 +180,7 @@
 			</div>
 
 			<div class="col-lg-2">
-				<a href="javascript:;">
+				<a href="javascript:;" onclick="cargare('rpt_prestamos_vencidos.php'); return false;">
 					<div class="box" style="text-align: center;">
 						<div class="bg-light btnboxito">
 							<i class="fa fa-times-circle"></i><br>
@@ -191,7 +191,7 @@
 			</div>
 
 			<div class="col-lg-2">
-				<a href="javascript:;">
+				<a href="javascript:;" onclick="cargare('rpt_prestamos_expirados.php'); return false;">
 					<div class="box" style="text-align: center;">
 						<div class="bg-light btnboxito">
 							<i class="fa fa-tag"></i><br>

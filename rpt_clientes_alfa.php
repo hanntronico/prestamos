@@ -7,9 +7,9 @@
 
 ?>
 
-        <div class="outer">
-          <div class="inner bg-light lter">
-            <div class="row">
+  <div class="outer">
+    <div class="inner bg-light lter">
+      <div class="row">
               <div class="col-lg-12">
                 <h2>Clientes por orden alfabético</h2>
                 <div class="btn-group" data-toggle="buttons" id="dark-toggle">
@@ -60,9 +60,9 @@
                 </div>	
 
               </div><!-- /.col-lg-12 -->
-            </div><!-- /.row -->
+      </div><!-- /.row -->
              
-            <div style="height: 150px;"></div>
+      <div style="height: 150px;"></div>
 
-          </div><!-- /.inner -->
-        </div><!-- /.outer -->
+    </div><!-- /.inner -->
+  </div><!-- /.outer -->
