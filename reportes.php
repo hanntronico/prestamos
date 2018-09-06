@@ -202,7 +202,7 @@
 			</div>
 
 			<div class="col-lg-2">
-				<a href="javascript:;">
+				<a href="javascript:;" onclick="cargare('rpt_prestamos_liquidados.php'); return false;">
 					<div class="box" style="text-align: center;">
 						<div class="bg-light btnboxito">
 							<i class="fa fa-legal"></i><br>
