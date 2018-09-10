@@ -1,5 +1,7 @@
 <?php
-	//echo "flujo de caja";
+	include("conectare.php");
+  $link=Conectarse();
+  include ("funciones.php");
 ?>
 
         <div class="outer">

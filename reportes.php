@@ -62,7 +62,7 @@
 			</div>
 			
 			<div class="col-lg-2">
-				<a href="javascript:;">
+				<a href="javascript:;" onclick="cargare('flujo_caja.php'); return false;">
 					<div class="box" style="text-align: center;">
 						<div class="bg-light btnboxito">
 							<i class="fa fa-book"></i><br>
@@ -73,7 +73,7 @@
 			</div>
 
 			<div class="col-lg-2">
-				<a href="javascript:;">
+				<a href="javascript:;" onclick="cargare('flujo_caja.php'); return false;">
 					<div class="box" style="text-align: center;">
 						<div class="bg-light btnboxito">
 							<i class="fa fa-long-arrow-right"></i><br>
@@ -84,7 +84,7 @@
 			</div>
 
 			<div class="col-lg-2">
-				<a href="javascript:;">
+				<a href="javascript:;" onclick="cargare('flujo_caja.php'); return false;">
 					<div class="box" style="text-align: center;">
 						<div class="bg-light btnboxito">
 							<i class="fa fa-long-arrow-left"></i><br>
@@ -95,7 +95,7 @@
 			</div>
 			
 			<div class="col-lg-2">
-				<a href="javascript:;">
+				<a href="javascript:;" onclick="cargare('flujo_caja.php'); return false;">
 					<div class="box" style="text-align: center;">
 						<div class="bg-light btnboxito">
 							<i class="fa fa-money"></i><br>
