@@ -5,7 +5,8 @@
 	$link=Conectarse();
 	$loc="location: ".$_POST["pag"].".php";
   $varnull=NULL;
-		
+	// echo $loc; echo "--".$_POST["pag"]; echo "   sw: ".$_POST["sw"];  exit();
+	
 	function fechas_hann($value)
 	{
 		list($dia,$mes,$anio)=explode("/",$value); 
@@ -80,6 +81,9 @@
 				$rs=@mysql_query("set names utf8",$link);
           	@mysql_fetch_array($rs);
 
+// list($dia,$mes,$anio)=explode("/",$_POST["fec_em"]); 
+//   $fec_em = $anio."-".$mes."-".$dia;
+
 				$sql="INSERT INTO clientes(nomClie,
                          				   apepatClie,
                          				   apematClie,
@@ -101,13 +105,15 @@
 					         	       $_POST["facebook"]."','".
 					         	       $_POST["email"]."','".
 					         	       ""."',1)";
+				// echo $sql; exit();
 				@mysql_query($sql,$link);
 				$msn='u1';				
 				}
 			else
 			{ 
-		
-				$msn='err_cli';
+			
+			// $msg_error="Login ya existe, intente otro...";
+			$msn='err_cli';
 			 }
 			}elseif($_POST["sw"]==2){
 
@@ -126,6 +132,7 @@
 					         "', facebook='".$_POST["facebook"].
 					         "', email='".$_POST["email"].
 					         "' WHERE codCliente='".$_POST["id"]."'";
+				// echo $sql; exit();
 				@mysql_query($sql,$link);
 				$msn='u1';
 	
@@ -144,15 +151,35 @@
 		case 'new_prestamo':
 			if($_POST["sw"]==1){
 
+				// echo $_POST["idCliente"]."<br>"; 
+				// echo $_POST["codCateg"]."<br>"; 
+				// echo $_POST["fecPrest"]."<br>"; 
+				// echo $_POST["idUsu"]."<br>"; 
+
+				// echo "entro a grabar prestamos";
+				// echo $_POST["idUsu"]." -- fec.venc.= ".
+				//      $_POST["fecvenc"]." -- total prestamo : ".
+				//      $_POST["totprendas"]." -- interes : ".
+				//      $_SESSION["catinteres"]; 
+				// exit();
+
+// codPrestamo	codCliente	codCategoria	fec_prestamo	fec_vencim cod_usuario	prestamo_estado	
+
+			// if($numfilas == 0 ){
+
 				$rs=@mysql_query("set names utf8",$link);
           	@mysql_fetch_array($rs);
 
-				$sql="INSERT INTO prestamos (codCliente, codCategoria, fec_prestamo, fec_vencim, cod_usuario, prestamo_estado) 
-							VALUES(".$_POST["idCliente"].",".$_POST["codCateg"].",'".fechas_hann($_POST["fecPrest"])."','".$_POST["fecvenc"]."',".$_POST["idUsu"].",1)";
+			$sql="INSERT INTO prestamos (codCliente, codCategoria, fec_prestamo, fec_vencim, cod_usuario, prestamo_estado) 
+						VALUES(".$_POST["idCliente"].",".$_POST["codCateg"].",'".fechas_hann($_POST["fecPrest"])."','".$_POST["fecvenc"]."',".$_POST["idUsu"].",1)";
 
 				@mysql_query($sql,$link);			
 
+				// echo $sql; exit();	
 				$idprestamo = mysql_insert_id();
+				// echo $idprestamo; 
+				// echo "<br>";
+						// exit()
 
 					foreach($_SESSION['prendas'] as $fila)
 	        	{
@@ -171,6 +198,8 @@
 							
 							include 'limpia_prenda.php';
 	          }
+
+ // codPago, pago_descrip, codPrestamo, fec_pago, pago_cargo, pago_abono, pago_saldo, cod_usuario, pago_estado
 
 	   	$sql2="INSERT INTO pagos(pago_descrip, codPrestamo, fec_pago, pago_cargo, pago_abono, pago_saldo, cod_usuario, pago_estado) 
 	    			 VALUES ('Préstamo', ".$idprestamo.",'".fechas_hann($_POST["fecPrest"])."', ".$_POST["totprendas"].", 0, ".$_POST["totprendas"].", ".$_POST["idUsu"].",1)";
@@ -251,6 +280,11 @@
 		case 'usuarios':
 			if($_POST["sw"]==1){
 			
+				// echo "entro a usuarios";
+				// echo $_POST["id"];
+				// exit();
+
+			// $rs=mysql_query("SELECT * FROM usuario WHERE login='".$_POST["log"]."'",$link);
 			$rs=mysql_query("SELECT * FROM usuario WHERE cod_usuario='".$_POST["id"]."'",$link);
 			$numfilas=mysql_num_rows($rs);
 			
@@ -283,6 +317,7 @@
 					         	       $_POST["telefono"]."','".
 					         	       $_POST["correo"]."',".
 					         	       $_POST["codnivel"].",".$valestado.")";
+				// echo $sql; exit();	
 				@mysql_query($sql,$link);
 				$msn='u1';				
 				}
@@ -320,6 +355,7 @@
 					         "', cod_nivel=".$_POST["codnivel"].
 					         ", estado=".$valestado.
 					         " WHERE cod_usuario='".$_POST["id"]."'";
+				// echo $sql; exit();
 				@mysql_query($sql,$link);
 				$msn='u1';
 	
@@ -341,9 +377,38 @@
 			$numfilas=@mysql_num_rows($rs);
 			
 	
-				if($numfilas == 0){$msn='u1';}
-				else{$msg_error="Login ya existe, intente otro...";}
+			if($numfilas == 0){
+
+				// echo "no hay registros en mnu_permisos".$_POST["id"];
+				// if ($_POST["estado"]=="on") {
+				// 	$valestado="1";
+				// }else{
+				// 	$valestado="0";
+				// }
+
+
+				// $rs=@mysql_query("set names utf8",$link);
+    //     @mysql_fetch_array($rs);
+// INSERT INTO mnu_permisos (cod_nivel, desc_menu, est_menu) 
+// VALUES ('2', 'Panel de control', '1'), 
+// 	   	 ('2', 'Clientes', '1'),
+// 	   	 ('2', 'Préstamos', '1'),
+// 	   	 ('2', 'Prendas', '1'),
+// 	   	 ('2', 'Historial', '1'),
+// 	   	 ('2', 'Reportes', '1'),
+// 	   	 ('2', 'Ayuda', '1');
+
+
+				// echo $sql; exit();	
+			//	@mysql_query($sql,$link);
+				$msn='u1';				
+				}
+			else
+			{ 
 			
+			$msg_error="Login ya existe, intente otro...";
+			
+			 }
 			}elseif($_POST["sw"]==2){
 
 				$rs=@mysql_query("SELECT * FROM mnu_permisos WHERE cod_nivel='".$_POST["id"]."'",$link);
@@ -359,6 +424,8 @@
 
 
 				if($numfilas == 0){
+					// echo "no hay registros en mnu_permisos para nivel =".$_POST["id"];
+					// exit();
 					$sql = "INSERT INTO mnu_permisos (cod_nivel, desc_menu, est_menu) 
 									VALUES ('".$_POST["id"]."', 'Panel de control', ".$estpanel."), 
 						   	 				 ('".$_POST["id"]."', 'Clientes', ".$estclie."),
@@ -367,11 +434,15 @@
 						   	 				 ('".$_POST["id"]."', 'Historial', ".$esthistorial."),
 						   	 				 ('".$_POST["id"]."', 'Reportes', ".$estreportes."),
 						   	 				 ('".$_POST["id"]."', 'Ayuda', ".$estayuda.")";
-		 
+		   	 	// echo $sql;
+		   	 	// exit();			 
 					@mysql_query($sql,$link);
 
 
 				}else{
+
+									// $rs=@mysql_query("set names utf8",$link);
+    //     @mysql_fetch_array($rs);
 
 
 					$sql = "UPDATE mnu_permisos 
@@ -427,6 +498,22 @@ case 'productos':
 	$rs=mysql_query("SELECT * FROM productos WHERE codProducto='".$_POST["id"]."'",$link);
 	$numfilas=mysql_num_rows($rs);
 			
+			//move_uploaded_file($_FILES[imag][tmp_name],"Productos/img".$_POST["id"].".jpg");
+
+			// $temporal=$_FILES['imag']['tmp_name'];
+			// $nombre=$_FILES['imag']['name'];
+			
+			// move_uploaded_file($temporal,"../productos/".$nombre);
+			   
+			// if ($nombre=="")
+			//   {   
+			//    $nombre ="no_image.png";
+			//   }
+
+			/*			move_uploaded_file($_FILES[imag][tmp_name],"../../imagenes/Productos/img".$_POST["id"]);*/
+			// cod_producto, descripcion, cod_subcat, precio, imagen, stock, cod_marca, prom
+			// cod_producto, descripcion, cod_subcat, precio, imagen, stock, cod_marca, estado, igv			
+	
 			$rs=@mysql_query("set names utf8",$link);
 			$fila=@mysql_fetch_array($rs);
 
@@ -437,6 +524,19 @@ case 'productos':
 	
 			}	
 			elseif($_POST["sw"]==2){
+
+
+			 //   $temporal=$_FILES['imag']['tmp_name'];
+			 //   $nombre=$_FILES['imag']['name'];
+			   
+			 //   $ruta=$nombre;
+			   
+			 //   if ($nombre =="")
+				// {
+				//  $ruta=$_POST["imgDef"];
+				// }
+			
+			   // move_uploaded_file($temporal,"../productos/".$nombre);
 	
 				$rs=@mysql_query("set names utf8",$link);
 				$fila=@mysql_fetch_array($rs);
@@ -465,6 +565,7 @@ case 'productos':
 /***************************** Fin de Case *********************************************************/
 									
 	}
-
+	// header($loc.'?msn='.$msn);
+	// header('location: main.php'.'?msn='.$msn)
 	header("location: main.php");
 ?>
