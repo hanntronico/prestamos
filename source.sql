@@ -250,5 +250,7 @@ USE bdprestacix;
 -- SELECT * FROM pagos WHERE codPrestamo = 15;
 -- SELECT sum(pago_abono) as total_abono FROM pagos WHERE codPrestamo = 15;
 
-Select * from clientes;
+Select * from pagos where codprestamo=25;
+-- SELECT pago_cargo FROM pagos WHERE codprestamo = 25 ORDER BY codPago DESC LIMIT 1
+
 

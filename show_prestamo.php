@@ -80,7 +80,7 @@
                 </a>
               </div>
                     <!-- <h5><?php //echo $nomClie." ".$apepatClie." ".$apematClie;?></h5> -->
-              <h5><?php echo $codPrestamo." - ".$nomClie." ".$apepatClie." ".$apematClie ;?></h5>
+              <h5><?php echo "CP: ".$codPrestamo." - ".$nomClie." ".$apepatClie." ".$apematClie ;?></h5>
 
 
                 <div class="toolbar">
@@ -270,14 +270,20 @@
                   <header>
                     <div class="toolbar">
                       <nav style="padding: 15px;">
-                        <!-- <a href="javascript:;" class="btn btn-danger btn-round btn-grad" onclick="cargare(); return false;" style="font-size: 12px;" >
-                          <i class="fa fa-money"></i>
-                          Pagar Interés
-                        </a> -->
-                        <a id="pagointeres" data-toggle="modal" data-content="Pagar interés" data-placement="bottom" class="btn btn-danger btn-round btn-grad" href="#pagarinteres" style="font-size: 12px;">
-                          <i class="fa fa-money"></i>
-                          Pagar Interés
-                        </a>  
+
+                        <?php 
+                          $sql="SELECT pago_cargo FROM pagos WHERE codprestamo = ".$_GET["id"]." ORDER BY codPago DESC LIMIT 1";
+                          $res=hannquery($sql,$link);
+                          $filita=@mysql_fetch_array($res);
+                          if ($filita[0]>0.00) { 
+                        ?>
+                        
+                          <a id="pagointeres" data-toggle="modal" data-content="Pagar interés" data-placement="bottom" class="btn btn-danger btn-round btn-grad" href="#pagarinteres" style="font-size: 12px;">
+                            <i class="fa fa-money"></i>
+                            Pagar Interés
+                          </a>  
+                        <?php } ?>
+                        
                         <!-- <a href="javascript:;" class="btn btn-danger btn-round btn-grad" style="font-size: 12px;"> -->
                         <a id="pagarliquidar" data-toggle="modal" data-content="Liquidar" data-placement="bottom" class="btn btn-danger btn-round btn-grad" href="#liquidar" style="font-size: 12px;">  
                           <i class="fa fa-shopping-cart"></i>

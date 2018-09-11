@@ -202,14 +202,6 @@
 		    // console.log("btnActivos");
 		});
 
-// $.post('/jquery/submitData',  
-//         { myData: 'This is my data.' }, 
-//         function(data, status, xhr) {
-        
-//             $('p').append('status: ' + status + ', data: ' + data);
-
-//         }).done(function() { alert('Request done!'); })
-//         .fail(function(jqxhr, settings, ex) { alert('failed, ' + ex); });
 
 		$("#pagointeres").click(function(){
 		  $.post("modal_prestamo.php", {idPrestamo: $('#codPrestamo').val()}, function(htmlexterno){

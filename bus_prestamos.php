@@ -1,8 +1,3 @@
-<?php
-
-
-?>        
-
 <script src="assets/js/hann.js" type="text/javascript" charset="utf-8"></script>
 
         <div class="outer">

@@ -173,4 +173,14 @@ function autogenerado3($tabla,$campocodigo,$numcaracteres){
       return $resultado;
     }
 
+  function hannquery2($consulta)
+    {
+      include("conectar.php");
+      $link=Conectarse();
+      $rs=@mysql_query("set names utf8",$link);
+      @mysql_fetch_array($rs);
+      $resultado = @mysql_query($consulta,$link);
+      return $resultado;
+    }
+
 ?>
