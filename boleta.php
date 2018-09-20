@@ -18,7 +18,7 @@
                 <div class="btn-group" data-toggle="buttons" id="dark-toggle">
                   <a href="javascript:;" class="btn btn-default" onclick="cargare('show_prestamo.php?id=<?php echo $_GET["id"]; ?>'); return false;">Volver</a>
                  
-                  <iframe src="print_boleta_pago.php?id=<?php echo $codPrestamo ?>" style="display:none;" name="frame"></iframe>
+                  <iframe src="print_contrato.php?id=<?php echo $codPrestamo ?>" style="display:none;" name="frame"></iframe>
 
                   <input type="button" class="btn btn-success" onclick="frames['frame'].print()" value="PRINT">
                  <?php 

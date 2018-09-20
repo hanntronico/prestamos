@@ -16,8 +16,7 @@
 
 	switch ($_POST["pag"]) {
 
-/******************** APROBADOS ************************************************************************/
-
+/************************* APROBADOS **************************************************/
 		case 'aprobados':
 
 			if($_POST["sw"]==1){
@@ -67,7 +66,7 @@
 				}
 
 				break;
-/*********************************  CLIENTES  ********************************************/
+/*********************************  CLIENTES  ****************************************/
 
 		case 'clientes':
 			if($_POST["sw"]==1){
@@ -102,13 +101,12 @@
 					         	       $_POST["email"]."','".
 					         	       ""."',1)";
 				@mysql_query($sql,$link);
-				$msn='u1';				
+				$msn='ic';				
 				}
 			else
-			{ 
-		
-				$msn='err_cli';
-			 }
+				{ 
+					$msn='err_cli';
+			 	}
 			}elseif($_POST["sw"]==2){
 
 				$rs=@mysql_query("set names utf8",$link);
@@ -127,7 +125,7 @@
 					         "', email='".$_POST["email"].
 					         "' WHERE codCliente='".$_POST["id"]."'";
 				@mysql_query($sql,$link);
-				$msn='u1';
+				$msn='uc';
 	
 			}else{
 
@@ -135,11 +133,11 @@
 				for ($i=0;$i<=$numreg-1;$i++){
 						mysql_query("DELETE FROM clientes WHERE codCliente='".$_POST["check"][$i]."'",$link);
 				}
-				$msn='ue1';
+				$msn='dc';
 			}
 			break;
 
-/*********************************  PRESTAMOS  **********************************************/
+/*******************************  PRESTAMOS  *******************************************/
 
 		case 'new_prestamo':
 			if($_POST["sw"]==1){
@@ -188,7 +186,7 @@
 			}
 			break;
 
-/*********************************  CATEGORIAS    ***********************************************/
+/*********************************  CATEGORIAS    ******************************************/
 
 		case 'categorias':
 			if($_POST["sw"]==1){
@@ -287,14 +285,12 @@
 				$msn='u1';				
 				}
 			else
-			{ 
-			
-			$msg_error="Login ya existe, intente otro...";
-			
-			 }
+				{ 
+					$msg_error="Login ya existe, intente otro...";
+				}
 			}elseif($_POST["sw"]==2){
 				$rs=@mysql_query("set names utf8",$link);
-          		@mysql_fetch_array($rs);
+          	@mysql_fetch_array($rs);
 				
 				if ($_POST["clave"]==$_POST["ant_clave"]) {
 					$pass=$_POST["ant_clave"];
@@ -333,7 +329,6 @@
 			break;
 
 /************************ MENU PERMISOS ******************************************************/
-
 		case 'mnu_permisos':
 			if($_POST["sw"]==1){
 			
@@ -420,51 +415,50 @@
 
 /***********************  PRODUCTOS  ******************************************************/
 
-case 'productos':
+		case 'productos':
 
-	if($_POST["sw"]==1){
-			
-	$rs=mysql_query("SELECT * FROM productos WHERE codProducto='".$_POST["id"]."'",$link);
-	$numfilas=mysql_num_rows($rs);
-			
-			$rs=@mysql_query("set names utf8",$link);
-			$fila=@mysql_fetch_array($rs);
-
-			mysql_query("INSERT INTO productos (nombreComercial, tecnologia, estadoProducto)
-						 VALUES('".$_POST["nombreprod"]."','" 
-     								  .$_POST["tecno"]."', 1)",$link);
-			$msn='p1';
-	
-			}	
-			elseif($_POST["sw"]==2){
-	
-				$rs=@mysql_query("set names utf8",$link);
-				$fila=@mysql_fetch_array($rs);
-				
-				mysql_query("UPDATE productos SET nombreComercial='".$_POST["nombreprod"].
-											 "', tecnologia='".$_POST["tecno"].
-											 "' WHERE codProducto=".$_POST["id"],$link);
-				$msn='p1';
-				
-	
-			}else{
-				$numreg=count($_POST["check"]);
-				for ($i=0;$i<=$numreg-1;$i++){
-								
-					if($numfilas==0 && $numfilas1==0 ){
-						mysql_query("DELETE FROM productos WHERE codProducto='".$_POST["check"][$i]."'",$link);
-
+			if($_POST["sw"]==1){
+					
+					$rs=mysql_query("SELECT * FROM productos WHERE codProducto='".$_POST["id"]."'",$link);
+					$numfilas=mysql_num_rows($rs);
 						
+					$rs=@mysql_query("set names utf8",$link);
+					$fila=@mysql_fetch_array($rs);
+
+					mysql_query("INSERT INTO productos (nombreComercial, tecnologia, estadoProducto)
+									 VALUES('".$_POST["nombreprod"]."','" 
+			     								  .$_POST["tecno"]."', 1)",$link);
+					$msn='p1';
+				}	
+					elseif($_POST["sw"]==2){
+			
+						$rs=@mysql_query("set names utf8",$link);
+						$fila=@mysql_fetch_array($rs);
+						
+						mysql_query("UPDATE productos SET nombreComercial='".$_POST["nombreprod"].
+													 "', tecnologia='".$_POST["tecno"].
+													 "' WHERE codProducto=".$_POST["id"],$link);
+						$msn='p1';
+						
+			
+					}else{
+						$numreg=count($_POST["check"]);
+						for ($i=0;$i<=$numreg-1;$i++){
+										
+							if($numfilas==0 && $numfilas1==0 ){
+								mysql_query("DELETE FROM productos WHERE codProducto='".$_POST["check"][$i]."'",$link);
+
+								
+							}
+						}
+						$msn='e1';
 					}
-				}
-				$msn='e1';
-			}
-			break;
+					break;
 
 
 /***************************** Fin de Case *********************************************************/
 									
 	}
 
-	header("location: main.php");
+	header("location: main.php?msn=".$msn);
 ?>
