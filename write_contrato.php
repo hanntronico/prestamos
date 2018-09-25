@@ -3,6 +3,8 @@
   $link=Conectarse();
   include "funciones.php";
 
+  $_SESSION["id_contrato"] = $_GET["idCont"];
+
   $rs=@mysql_query("set names utf8",$link);
   $fila=@mysql_fetch_array($rs);
   $consulta = "SELECT file_contrato FROM contratos WHERE idContrato=".$_GET["idCont"];

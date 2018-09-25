@@ -1,4 +1,5 @@
 <?php
+  session_start();
   include "conectar.php";
   $link=Conectarse();
   include "funciones.php";
@@ -14,10 +15,24 @@
                   CONTRATOS
                   <!-- <small>id : <?php //echo $_GET["id"]; ?></small>  -->
                   <input type="hidden" name="codPrest" id="codPrest" value="<?php echo $_GET["id"];?>">
+                  <input type="text" name="idContrato" id="idContrato">
                 </h2>
                 <div class="btn-group" data-toggle="buttons" id="dark-toggle">
                   <a href="javascript:;" class="btn btn-default" onclick="cargare('show_prestamo.php?id=<?php echo $_GET["id"]; ?>'); return false;">Volver</a>
                  
+                  <script> 
+                    // var variableJS = “contenido de la variable javascript”; 
+                    // var hi = $("#idContrato").val(codContrato);
+                    // console.log(hi);
+                  </script>
+                  
+                  <?php
+                    // $variablePHP = “<script> document.write(variableJS) </script>”;
+                    // echo “variablePHP = “.$variablePHP;}
+                    $_SESSION["id_contrato"] = 7;
+                    echo "id: ".$_SESSION["id_contrato"];
+                  ?>
+
                   <iframe src="print_contrato.php?id=<?php echo $codPrestamo ?>" style="display:none;" name="frame"></iframe>
 
                   <input type="button" class="btn btn-success" onclick="frames['frame'].print()" value="PRINT">

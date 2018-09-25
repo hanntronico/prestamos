@@ -272,10 +272,15 @@
 			// console.log("Boton Marcar Expirado presionado");
 		});
 
+
     $("#opcContrato").change(function (){
     	var codPrestamo = $("#codPrest").val();
     	var codContrato = $("#opcContrato").val();
 	   	// console.log(codContrato);
+	   	// $("#idContrato").val(codContrato);
+	   	var variableJS = "<?php session_start(); echo $_SESSION['id_contrato']; ?>" ;
+		document.write("VariableJS =" + variableJS);
+
       var content = jQuery("#div-2");
       content.fadeIn('slow').load("write_contrato.php?id="+codPrestamo+"&idCont="+codContrato);
     });
