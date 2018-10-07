@@ -278,11 +278,16 @@
     	var codContrato = $("#opcContrato").val();
 	   	// console.log(codContrato);
 	   	// $("#idContrato").val(codContrato);
-	   	var variableJS = "<?php session_start(); echo $_SESSION['id_contrato']; ?>" ;
-		document.write("VariableJS =" + variableJS);
+	 //   	var variableJS = "<?php session_start(); echo $_SESSION['id_contrato']; ?>" ;
+		// document.write("VariableJS =" + variableJS);
 
-      var content = jQuery("#div-2");
-      content.fadeIn('slow').load("write_contrato.php?id="+codPrestamo+"&idCont="+codContrato);
+		jQuery("#idContrato").val(codContrato);
+
+		$("#contentFrame").html("<iframe src='print_contrato.php?id="+codPrestamo+"&codContra="+codContrato+"' style='display:none;' name='frame'></iframe>");
+
+		// alert( jQuery("#idContrato").val() );
+	    var content = jQuery("#div-2");
+	    content.fadeIn('slow').load("write_contrato.php?id="+codPrestamo+"&idCont="+codContrato);
     });
 
 		// $("#btnGuardarImagen").click(function(){

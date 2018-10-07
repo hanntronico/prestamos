@@ -1,3 +1,3 @@
 <?php
-	echo "hanntronico";
+	echo "hanntronico ".$_GET['id']." - ".$_GET['codContra'];
 ?>

@@ -15,31 +15,38 @@
                   CONTRATOS
                   <!-- <small>id : <?php //echo $_GET["id"]; ?></small>  -->
                   <input type="hidden" name="codPrest" id="codPrest" value="<?php echo $_GET["id"];?>">
-                  <input type="text" name="idContrato" id="idContrato">
+                  <input type="hidden" name="idContrato" id="idContrato">
                 </h2>
                 <div class="btn-group" data-toggle="buttons" id="dark-toggle">
                   <a href="javascript:;" class="btn btn-default" onclick="cargare('show_prestamo.php?id=<?php echo $_GET["id"]; ?>'); return false;">Volver</a>
                  
-                  <script> 
-                    // var variableJS = “contenido de la variable javascript”; 
-                    // var hi = $("#idContrato").val(codContrato);
-                    // console.log(hi);
-                  </script>
                   
                   <?php
                     // $variablePHP = “<script> document.write(variableJS) </script>”;
                     // echo “variablePHP = “.$variablePHP;}
                     $_SESSION["id_contrato"] = 7;
-                    echo "id: ".$_SESSION["id_contrato"];
+                    echo "iddd: ".$_SESSION["id_contrato"];
+                    $codPrestamo=$_GET["id"];
+
                   ?>
 
-                  <iframe src="print_contrato.php?id=<?php echo $codPrestamo ?>" style="display:none;" name="frame"></iframe>
+                  <script type="text/javascript">
+                    // if (jQuery("#idContrato").val()!='') {
+                      // alert(jQuery("#idContrato").val());
+                    // }
+                  </script>
+
+                  <!-- <div id="contentFrame" style="display: none;"> -->
+                  <div id="contentFrame">
+                    <!-- <iframe src="print_contrato.php?id=<?php //echo $codPrestamo ?>&codContra=1" style="display:none;" name="frame"></iframe>                     -->
+                  </div>
+
 
                   <input type="button" class="btn btn-success" onclick="frames['frame'].print()" value="PRINT">
+                 
                  <?php 
                   $consult = ' WHERE estado_contrato=1 ORDER BY 2';
-                  llenarcombo('contratos','idContrato, file_contrato', $consult, $codnivel, '','codContrato id=opcContrato'); 
-                 ?>
+                  llenarcombo('contratos','idContrato, file_contrato', $consult, $codnivel, '','codContrato id=opcContrato'); ?>
 
                 </div>
                 <ul class="pricing-table light" contenteditable>
