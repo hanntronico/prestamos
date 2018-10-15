@@ -3,9 +3,20 @@
   include "conectar.php";
   $link=Conectarse();
   include "funciones.php";
+  $codPrestamo=$_GET["id"];
 ?>
 
 <script src="assets/js/hann.js" type="text/javascript" charset="utf-8" async></script>
+
+    <style type="text/css">
+      @media print {
+        #dark-toggle, h2 {
+          display: none;
+        }
+
+      }
+    </style>
+
 
         <div class="outer">
           <div class="inner bg-light lter">
@@ -17,38 +28,22 @@
                   <input type="hidden" name="codPrest" id="codPrest" value="<?php echo $_GET["id"];?>">
                   <input type="hidden" name="idContrato" id="idContrato">
                 </h2>
+
                 <div class="btn-group" data-toggle="buttons" id="dark-toggle">
-                  <a href="javascript:;" class="btn btn-default" onclick="cargare('show_prestamo.php?id=<?php echo $_GET["id"]; ?>'); return false;">Volver</a>
-                 
-                  
-                  <?php
-                    // $variablePHP = “<script> document.write(variableJS) </script>”;
-                    // echo “variablePHP = “.$variablePHP;}
-                    $_SESSION["id_contrato"] = 7;
-                    echo "iddd: ".$_SESSION["id_contrato"];
-                    $codPrestamo=$_GET["id"];
+                    <a href="javascript:;" class="btn btn-default" onclick="cargare('show_prestamo.php?id=<?php echo $_GET["id"]; ?>'); return false;">Volver</a>
 
-                  ?>
-
-                  <script type="text/javascript">
-                    // if (jQuery("#idContrato").val()!='') {
-                      // alert(jQuery("#idContrato").val());
-                    // }
-                  </script>
-
-                  <!-- <div id="contentFrame" style="display: none;"> -->
-                  <div id="contentFrame">
-                    <!-- <iframe src="print_contrato.php?id=<?php //echo $codPrestamo ?>&codContra=1" style="display:none;" name="frame"></iframe>                     -->
-                  </div>
-
-
-                  <input type="button" class="btn btn-success" onclick="frames['frame'].print()" value="PRINT">
-                 
-                 <?php 
+                    <input type="button" class="btn btn-success" onclick="frames['frame'].print()" value="PRINT">
+                    
+                <?php 
                   $consult = ' WHERE estado_contrato=1 ORDER BY 2';
-                  llenarcombo('contratos','idContrato, file_contrato', $consult, $codnivel, '','codContrato id=opcContrato'); ?>
-
+                  llenarcombo('contratos','idContrato, file_contrato', $consult, $codnivel, '','codContrato id=opcContrato')
+                ?> 
                 </div>
+                  
+ 
+                
+                <div id="contentFrame" style="display: none;"></div>
+                
                 <ul class="pricing-table light" contenteditable>
                   <li class="col-lg-2" style="padding: 0px">
                     <div style="background-color: #fff;">
