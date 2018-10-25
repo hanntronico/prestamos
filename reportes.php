@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <script src="assets/js/hann.js" type="text/javascript" charset="utf-8"></script>
 
 <div class="outer">
@@ -23,6 +27,135 @@
 			
 		</div>
 
+
+
+    <div id="registradeposito" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Depósito a caja</h4>
+          </div>
+	          <div class="modal-body">
+	            <div id="content_modal_regdeposito">
+
+	            	  <div class="row">
+								    <div class="col-lg-10">
+
+								      	<input type="hidden" name="codConcepto" id="codConcepto" value="14">
+
+								      <div class="form-group">
+								        <label class="control-label col-lg-3">Cantidad :</label>
+								        <div class="col-lg-6">
+								          <input type="number" class="form-control" name="cantidad" id="cantidad" width="10%">
+								        </div>
+								      </div>
+
+								      <div class="form-group" style="margin-top: 50px;">
+								        <label class="control-label col-lg-3">Descripción :</label>
+								        <div class="col-lg-6">
+								          <textarea name="descripcion" id="descripcion" cols="50" rows="3"></textarea>
+								        </div>
+								      </div>
+								    
+								    </div>
+								  </div>
+
+	            </div>
+	          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            <button type="button" id="btnRegDepo" class="btn btn-primary btn-grad" data-dismiss="modal">Depositar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="registraretiro" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Retiro de caja</h4>
+          </div>
+	          <div class="modal-body">
+	            <div id="content_modal_regretiro">
+
+	            	  <div class="row">
+								    <div class="col-lg-10">
+
+								      	<input type="hidden" name="codConcepRet" id="codConcepRet" value="4">
+
+								      <div class="form-group">
+								        <label class="control-label col-lg-3">Cantidad :</label>
+								        <div class="col-lg-6">
+								          <input type="number" class="form-control" name="cantRet" id="cantRet" width="10%">
+								        </div>
+								      </div>
+
+								      <div class="form-group" style="margin-top: 50px;">
+								        <label class="control-label col-lg-3">Descripción :</label>
+								        <div class="col-lg-6">
+								          <textarea name="descripRet" id="descripRet" cols="50" rows="3"></textarea>
+								        </div>
+								      </div>
+								    
+								    </div>
+								  </div>
+
+	            </div>
+	          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            <button type="button" id="btnRegRetiro" class="btn btn-primary btn-grad" data-dismiss="modal">Retirar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="registragasto" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Registrar gasto</h4>
+          </div>
+	          <div class="modal-body">
+	            <div id="content_modal_regisgasto">
+
+	            	  <div class="row">
+								    <div class="col-lg-10">
+
+								      	<input type="hidden" name="codConcepGast" id="codConcepGast" value="5">
+
+								      <div class="form-group">
+								        <label class="control-label col-lg-3">Cantidad :</label>
+								        <div class="col-lg-6">
+								          <input type="number" class="form-control" name="cantGast" id="cantGast" width="10%">
+								        </div>
+								      </div>
+
+								      <div class="form-group" style="margin-top: 50px;">
+								        <label class="control-label col-lg-3">Descripción :</label>
+								        <div class="col-lg-6">
+								          <textarea name="descripGast" id="descripGast" cols="50" rows="3"></textarea>
+								        </div>
+								      </div>
+								    
+								    </div>
+								  </div>
+
+	            </div>
+	          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            <button type="button" id="btnRegGasto" class="btn btn-primary btn-grad" data-dismiss="modal">Gastar</button>
+          </div>
+        </div>
+      </div>
+    </div> 
+
+
 <style type="text/css" media="screen">
 	.btnboxito {
 		padding: 25px 10px; 
@@ -45,6 +178,9 @@
 
 		<div class="titulo">Caja</div>
 		
+		<div id="content_modal_hann"></div>
+
+
 		<div class="row">
 			<div class="col-lg-2">
 				<a href="javascript:;" onclick="cargare('flujo_caja.php'); return false;">
@@ -58,7 +194,7 @@
 			</div>
 			
 			<div class="col-lg-2">
-				<a href="javascript:;" onclick="cargare('flujo_caja.php'); return false;">
+				<a href="javascript:;" onclick="cargare('resumen_caja.php'); return false;">
 					<div class="box" style="text-align: center;">
 						<div class="bg-light btnboxito">
 							<i class="fa fa-book"></i><br>
@@ -69,7 +205,7 @@
 			</div>
 
 			<div class="col-lg-2">
-				<a href="javascript:;" onclick="cargare('flujo_caja.php'); return false;">
+				<a data-content="Registrar Depósito" data-toggle="modal" data-placement="bottom" href="#registradeposito" >
 					<div class="box" style="text-align: center;">
 						<div class="bg-light btnboxito">
 							<i class="fa fa-long-arrow-right"></i><br>
@@ -80,7 +216,7 @@
 			</div>
 
 			<div class="col-lg-2">
-				<a href="javascript:;" onclick="cargare('flujo_caja.php'); return false;">
+				<a data-content="Registrar Retiro" data-toggle="modal" data-placement="bottom" href="#registraretiro">
 					<div class="box" style="text-align: center;">
 						<div class="bg-light btnboxito">
 							<i class="fa fa-long-arrow-left"></i><br>
@@ -91,7 +227,7 @@
 			</div>
 			
 			<div class="col-lg-2">
-				<a href="javascript:;" onclick="cargare('flujo_caja.php'); return false;">
+				<a data-content="Registrar Retiro" data-toggle="modal" data-placement="bottom" href="#registragasto">
 					<div class="box" style="text-align: center;">
 						<div class="bg-light btnboxito">
 							<i class="fa fa-money"></i><br>

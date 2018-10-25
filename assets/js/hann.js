@@ -281,14 +281,89 @@
 	 //   	var variableJS = "<?php session_start(); echo $_SESSION['id_contrato']; ?>" ;
 		// document.write("VariableJS =" + variableJS);
 
-		jQuery("#idContrato").val(codContrato);
+			jQuery("#idContrato").val(codContrato);
 
-		$("#contentFrame").html("<iframe src='print_contrato.php?id="+codPrestamo+"&codContra="+codContrato+"' style='display:none;' name='frame'></iframe>");
+			$("#contentFrame").html("<iframe src='print_contrato.php?id="+codPrestamo+"&codContra="+codContrato+"' style='display:none;' name='frame'></iframe>");
 
-		// alert( jQuery("#idContrato").val() );
-	    var content = jQuery("#div-2");
-	    content.fadeIn('slow').load("write_contrato.php?id="+codPrestamo+"&idCont="+codContrato);
+			// alert( jQuery("#idContrato").val() );
+		    var content = jQuery("#div-2");
+		    content.fadeIn('slow').load("write_contrato.php?id="+codPrestamo+"&idCont="+codContrato);
     });
+
+
+    $("#btnEnviar").click(function() {
+    	// alert("hann");
+    	var vardesde = $('#fecDesde').val();
+    	var varhasta = $('#fecHasta').val();
+    	var opcConcepto = $('#opcConcepto').val();
+
+		  $.post("ver_busqueda.php", {
+			  	desde: vardesde, 
+			  	hasta: varhasta,
+			  	opcConcepto: opcConcepto
+			  }, function(htmlexterno){
+		   		$("#content_verbusca").html(htmlexterno);
+		  	});    	
+    }); 
+
+
+		$("#btnRegDepo").click(function() {
+			var cantidad = $('#cantidad').val();
+			var descrip_deposito = $('#descripcion').val();
+			var codConcepto = $('#codConcepto').val();
+
+			$.post('grabar_deposito.php', {
+				cantidad: cantidad,
+			  descrip_deposito: descrip_deposito,
+			  codConcepto: codConcepto
+				}, function() {
+					// $("#content_modal_hann").html(htmlexterno);
+				/*optional stuff to do after success */
+			});
+			$('#cantidad').val("");
+			$('#descripcion').val("");
+			// console.log("boton de pagar dscto presionado");
+		});
+
+
+		$("#btnRegRetiro").click(function() {
+			var cantiRet = $('#cantRet').val();
+			var descripRetiro = $('#descripRet').val();
+			var codConcepto = $('#codConcepRet').val();
+
+			$.post('grabar_retiro.php', {
+				cantidad: cantiRet,
+			  descrip_retiro: descripRetiro,
+			  codConcepto: codConcepto
+				}, function() {
+					// $("#content_modal_hann").html(htmlexterno);
+				/*optional stuff to do after success */
+			});
+			$('#cantRet').val("");
+			$('#descripRet').val("");
+			// console.log("boton de pagar dscto presionado");
+		});
+
+
+		$("#btnRegGasto").click(function() {
+			var cantiGast = $('#cantGast').val();
+			var descripGasto = $('#descripGast').val();
+			var codConcepGast = $('#codConcepGast').val();
+
+			$.post('grabar_gasto.php', {
+				cantidad: cantiGast,
+			  descrip_gasto: descripGasto,
+			  codConcepGast: codConcepGast
+				}, function() {
+					// $("#content_modal_hann").html(htmlexterno);
+				/*optional stuff to do after success */
+			});
+			$('#cantGast').val("");
+			$('#descripGast').val("");
+			// console.log("boton de pagar dscto presionado");
+		});
+
+
 
 		// $("#btnGuardarImagen").click(function(){
 		//  //  $.post("grabar_liquidar.php", {idPrestamo: $('#codPrestamo').val(), 
