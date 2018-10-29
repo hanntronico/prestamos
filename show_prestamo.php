@@ -183,7 +183,7 @@
                             while($row1=@mysql_fetch_array($res1))
                               {
                                 $totmonto = $totmonto + $row1["monto"];
-                                echo $row1["prenda_descrip"]."<br>";
+                                echo $row1["prenda_descrip"]." ".$row1["prenda_marca"]." ".$row1["prenda_modelo"]."<br>";
                               }
                           ?>
                         </div>
@@ -406,7 +406,7 @@
                       <div class="stat_text" style="width: 98%;">
                         <strong style="padding-bottom: 8px;"> 
                           <a href="#" onclick="cargare('show_prenda.php?id=<?php echo $row1["idPrenda"]; ?>')">
-                            <?php echo $row1["prenda_descrip"]."<br>"; ?>    
+                            <?php echo $row1["prenda_descrip"]." ".$row1["prenda_marca"]." ".$row1["prenda_modelo"]."<br>"; ?>    
                           </a>  
                         </strong>
                         <?php //echo dma_shora($row1["fec_prestamo"]);?>

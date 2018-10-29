@@ -113,8 +113,6 @@ $query="SELECT c.idConcepto, c.nom_concepto, count(caja_concepto) AS total, sum(
  // $fila =mysql_fetch_object($resulta);
 
 
- echo $totales[0]['caja_concepto'];
-
 	$i=0;
 	while ($row=@mysql_fetch_array($resulta)) {
 		$totales[$i] = array('idConcepto'=>$row["idConcepto"],
@@ -125,33 +123,11 @@ $query="SELECT c.idConcepto, c.nom_concepto, count(caja_concepto) AS total, sum(
 	}
 
 
-
-// var_dump($totales);
-// echo "<br>";
-
-
-// echo $totales[0]["idConcepto"]." - ".$totales[0]["nom_concepto"]." - ".$totales[0]["total"]." - ".$totales[0]["suma"]."<br>";
-// echo $totales[1]["idConcepto"]." - ".$totales[1]["nom_concepto"]." - ".$totales[1]["total"]." - ".$totales[1]["suma"]."<br>";
-// echo $totales[2]["idConcepto"]." - ".$totales[2]["nom_concepto"]." - ".$totales[2]["total"]." - ".$totales[2]["suma"]."<br>";
-// echo $totales[3]["idConcepto"]." - ".$totales[3]["nom_concepto"]." - ".$totales[3]["total"]." - ".$totales[3]["suma"]."<br>";
-// echo $totales[4]["idConcepto"]." - ".$totales[4]["nom_concepto"]." - ".$totales[4]["total"]." - ".$totales[4]["suma"]."<br>";
-// echo $totales[5]["idConcepto"]." - ".$totales[5]["nom_concepto"]." - ".$totales[5]["total"]." - ".$totales[5]["suma"]."<br>";
-// echo $totales[6]["idConcepto"]." - ".$totales[6]["nom_concepto"]." - ".$totales[6]["total"]." - ".$totales[6]["suma"]."<br>";
-// echo $totales[7]["idConcepto"]." - ".$totales[7]["nom_concepto"]." - ".$totales[7]["total"]." - ".$totales[7]["suma"]."<br>";
-// echo $totales[8]["idConcepto"]." - ".$totales[8]["nom_concepto"]." - ".$totales[8]["total"]." - ".$totales[8]["suma"]."<br>";
-// echo $totales[9]["idConcepto"]." - ".$totales[9]["nom_concepto"]." - ".$totales[9]["total"]." - ".$totales[9]["suma"]."<br>";
-// echo $totales[10]["idConcepto"]." - ".$totales[10]["nom_concepto"]." - ".$totales[10]["total"]." - ".$totales[10]["suma"]."<br>";
-// echo $totales[11]["idConcepto"]." - ".$totales[11]["nom_concepto"]." - ".$totales[11]["total"]." - ".$totales[11]["suma"]."<br>";
-// echo $totales[12]["idConcepto"]." - ".$totales[12]["nom_concepto"]." - ".$totales[12]["total"]." - ".$totales[12]["suma"]."<br>";
-// echo $totales[13]["idConcepto"]." - ".$totales[13]["nom_concepto"]." - ".$totales[13]["total"]." - ".$totales[13]["suma"]."<br>";
-// echo $totales[14]["idConcepto"]." - ".$totales[14]["nom_concepto"]." - ".$totales[14]["total"]." - ".$totales[14]["suma"]."<br>";
-
-
- // echo "<br>";
- 
- // exit();
 $suma_salidas = $totales[0]["suma"]+$totales[1]["suma"]+$totales[2]["suma"]+$totales[3]["suma"]+$totales[4]["suma"]; 
 $total_salidas = $totales[0]["total"]+$totales[1]["total"]+$totales[2]["total"]+$totales[3]["total"]+$totales[4]["total"];
+
+$suma_entradas = $totales[6]["suma"]+$totales[7]["suma"]+$totales[8]["suma"]+$totales[9]["suma"]+$totales[10]["suma"]+$totales[11]["suma"]+$totales[12]["suma"]+$totales[13]["suma"]+$totales[14]["suma"];
+$total_entradas = $totales[6]["total"]+$totales[7]["total"]+$totales[8]["total"]+$totales[9]["total"]+$totales[10]["total"]+$totales[11]["total"]+$totales[12]["total"]+$totales[13]["total"]+$totales[14]["total"];
 
 ?>
 <!-- 
@@ -213,72 +189,72 @@ $total_salidas = $totales[0]["total"]+$totales[1]["total"]+$totales[2]["total"]+
                   				<td align="right">S/. <?php echo number_format($totales[0]["suma"], 2, '.', '');?></td>
                   			</tr>
                   			<tr style="border-bottom: 1px solid #DEDEDE;">
-                  				<td>Abonos a capital</td>
-                  				<td align="center">0</td>
-                  				<td align="right">S/. 0.00</td>
+                  				<td><?php echo $totales[7]["nom_concepto"];?></td>
+                  				<td align="center"><?php echo $totales[7]["total"];?></td>
+                  				<td align="right">S/. <?php echo number_format($totales[7]["suma"], 2, '.', '');?></td>
                   				<td width="1" style="background-color: #F4F4F4; border-bottom: 1px solid #F4F4F4;">&nbsp;</td>
                   				<td><?php echo $totales[1]["nom_concepto"];?></td>
                   				<td align="center"><?php echo $totales[1]["total"];?></td>
                   				<td align="right">S/. <?php echo number_format($totales[1]["suma"], 2, '.', '');?></td>
                   			</tr>
                   			<tr style="border-bottom: 1px solid #DEDEDE;">
-                  				<td>Pago de recargos</td>
-                  				<td align="center">0</td>
-                  				<td align="right">S/. 0.00</td>
+                  				<td><?php echo $totales[8]["nom_concepto"];?></td>
+                  				<td align="center"><?php echo $totales[8]["total"];?></td>
+                  				<td align="right">S/. <?php echo number_format($totales[8]["suma"], 2, '.', '');?></td>
                   				<td width="1" style="background-color: #F4F4F4; border-bottom: 1px solid #F4F4F4;">&nbsp;</td>
                   				<td><?php echo $totales[2]["nom_concepto"];?></td>
                   				<td align="center"><?php echo $totales[2]["total"];?></td>
                   				<td align="right">S/. <?php echo number_format($totales[2]["suma"], 2, '.', '');?></td>
                   			</tr>
                   			<tr style="border-bottom: 1px solid #DEDEDE;">
-                  				<td>Ventas</td>
-                  				<td align="center">0</td>
-                  				<td align="right">S/. 0.00</td>
+                  				<td><?php echo $totales[9]["nom_concepto"];?></td>
+                  				<td align="center"><?php echo $totales[9]["total"];?></td>
+                  				<td align="right">S/. <?php echo number_format($totales[9]["suma"], 2, '.', '');?></td>
                   				<td width="1" style="background-color: #F4F4F4; border-bottom: 1px solid #F4F4F4;">&nbsp;</td>
                   				<td><?php echo $totales[3]["nom_concepto"];?></td>
                   				<td align="center"><?php echo $totales[3]["total"];?></td>
                   				<td align="right">S/. <?php echo number_format($totales[3]["suma"], 2, '.', '');?></td>
                   			</tr>
                   			<tr style="border-bottom: 1px solid #DEDEDE;">
-                  				<td>Apartados</td>
-                  				<td align="center">0</td>
-                  				<td align="right">S/. 0.00</td>
+                  				<td><?php echo $totales[10]["nom_concepto"];?></td>
+                  				<td align="center"><?php echo $totales[10]["total"];?></td>
+                  				<td align="right">S/. <?php echo number_format($totales[10]["suma"], 2, '.', '');?></td>
                   				<td width="1" style="background-color: #F4F4F4; border-bottom: 1px solid #F4F4F4;">&nbsp;</td>
                   				<td><?php echo $totales[4]["nom_concepto"];?></td>
                   				<td align="center"><?php echo $totales[4]["total"];?></td>
                   				<td align="right">S/. <?php echo number_format($totales[4]["suma"], 2, '.', '');?></td>
                   			</tr>
                   			<tr style="border-bottom: 1px solid #DEDEDE;">
-                  				<td>Préstamos cancelados</td>
-                  				<td align="center">0</td>
-                  				<td align="right">S/. 0.00</td>
+                  				<td><?php echo $totales[11]["nom_concepto"];?></td>
+                  				<td align="center"><?php echo $totales[11]["total"];?></td>
+                  				<td align="right">S/. <?php echo number_format($totales[11]["suma"], 2, '.', '');?></td>
                   				<td width="1" style="background-color: #F4F4F4; border-bottom: 1px solid #F4F4F4;">&nbsp;</td>
                   				<td></td>
                   				<td align="center"></td>
                   				<td align="right"></td>
                   			</tr>                  			               			                			                  			
                   			<tr style="border-bottom: 1px solid #DEDEDE;">
-                  				<td>Compras canceladas</td>
-                  				<td align="center">0</td>
-                  				<td align="right">S/. 0.00</td>
+                  				<td><?php echo $totales[12]["nom_concepto"];?></td>
+                  				<td align="center"><?php echo $totales[12]["total"];?></td>
+                  				<td align="right">S/. <?php echo number_format($totales[12]["suma"], 2, '.', '');?></td>
                   				<td width="1" style="background-color: #F4F4F4; border-bottom: 1px solid #F4F4F4;">&nbsp;</td>
                   				<td></td>
                   				<td align="center"></td>
                   				<td align="right"></td>
                   			</tr>
                   			<tr style="border-bottom: 1px solid #DEDEDE;">
-                  				<td>Depósitos</td>
-                  				<td align="center">0</td>
-                  				<td align="right">S/. 0.00</td>
+                  				<td><?php echo $totales[13]["nom_concepto"];?></td>
+                  				<td align="center"><?php echo $totales[13]["total"];?></td>
+                  				<td align="right">S/. <?php echo number_format($totales[13]["suma"], 2, '.', '');?></td>
                   				<td width="1" style="background-color: #F4F4F4; border-bottom: 1px solid #F4F4F4;">&nbsp;</td>
                   				<td></td>
                   				<td align="center"></td>
                   				<td align="right"></td>
                   			</tr>
                   			<tr style="border-bottom: 1px solid #000;">
-                  				<td>Reposición de boletas</td>
-                  				<td align="center">0</td>
-                  				<td align="right">S/. 0.00</td>
+                  				<td><?php echo $totales[14]["nom_concepto"];?></td>
+                  				<td align="center"><?php echo $totales[14]["total"];?></td>
+                  				<td align="right">S/. <?php echo number_format($totales[14]["suma"], 2, '.', '');?></td>
                   				<td width="1" style="background-color: #F4F4F4; border-bottom: 1px solid #F4F4F4;">&nbsp;</td>
                   				<td></td>
                   				<td align="center"></td>
@@ -286,8 +262,8 @@ $total_salidas = $totales[0]["total"]+$totales[1]["total"]+$totales[2]["total"]+
                   			</tr>
                   			<tr style="border-bottom: 1px solid #DEDEDE;">
                   				<td>Total de Entradas</td>
-                  				<td align="center">0</td>
-                  				<td align="right">S/. 0.00</td>
+                  				<td align="center"><?php echo $total_entradas; ?></td>
+                  				<td align="right">S/. <?php echo number_format($suma_entradas, 2, '.', ''); ?></td>
                   				<td width="1" style="background-color: #F4F4F4; border-bottom: 1px solid #F4F4F4;">&nbsp;</td>
                   				<td>Total de Salidas</td>
                   				<td align="center"><?php echo $total_salidas; ?></td>
@@ -296,10 +272,13 @@ $total_salidas = $totales[0]["total"]+$totales[1]["total"]+$totales[2]["total"]+
                   			<tr style="border-bottom: 1px solid #DEDEDE;">
                   				<th colspan="3" style="background-color: #fff;">Disponible en caja</th>
                   				<th width="1" style="background-color: #fff; border-bottom: 1px solid #F4F4F4;">&nbsp;</th>
-                  				<th colspan="3" style="text-align: right; background-color: #fff;">S/. 320.00</th>
+                  				<th colspan="3" style="text-align: right; background-color: #fff;">
+                  					S/.<?php echo number_format(($suma_entradas-$suma_salidas), 2, '.', ''); ?> 
+                  				</th>
                   			</tr>                  			
                   		</tbody>
                   	</table>
+
 
 <!--                   	<div class="row" style="padding: 2px;">
                   		<div class="col-lg-6" style="padding: 0px 5px 0px 15px; margin: 0px;">

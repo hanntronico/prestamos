@@ -133,14 +133,15 @@
 		}
 ?>
 			<tr>
-				<td align="center" style="vertical-align: middle;" class="<?php echo $fila_color; ?>"><?php echo $row["codPrestamo"]; ?></td>
+				<td align="center" style="vertical-align: middle;" class="<?php echo $fila_color; ?>">
+          <?php echo $row["codPrestamo"]; ?></td>
 				<td style="vertical-align: middle;">
 					<a href="javascript:;" onclick="cargare('show_prestamo.php?id=<?php echo $row["codPrestamo"] ?>'); return false;">
 						<strong style="font-size: 14px;">
 							<?php echo $row["nomClie"]." ".$row["apepatClie"]." ".$row["apematClie"]; ?>
 						</strong>
 						<br>
-						<?php echo $row["prenda_descrip"]; ?>
+						<?php echo $row["prenda_descrip"]." ".$row["prenda_marca"]." ".$row["prenda_modelo"]; ?>
 					</a>
 				</td>
 				<td style="vertical-align: middle; text-align: center;"><?php echo dma_shora($row["fec_prestamo"]); ?></td>

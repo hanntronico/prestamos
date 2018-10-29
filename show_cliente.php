@@ -319,15 +319,18 @@ if ($prestamos_total != 0) {
                   <?php while($row1=@mysql_fetch_array($res))
                              {$i++;
                   ?>
-
-
 <?php
-  $resulty=hannquery("SELECT detalle_prestamo.codPrestamo, prendas.idPrenda, prendas.prenda_descrip 
+  $resulty=hannquery("SELECT detalle_prestamo.codPrestamo, prendas.idPrenda, prendas.prenda_descrip, prendas.prenda_marca, 
+                      prendas.prenda_modelo
                       FROM detalle_prestamo, prendas 
                       WHERE detalle_prestamo.idPrenda = prendas.idPrenda 
                       AND codPrestamo = ".$row1["codPrestamo"]." ORDER BY prendas.idPrenda ASC LIMIT 1",$link);
+  echo $row1["codPrestamo"];
   $fila_c=@mysql_fetch_object($resulty);
   $prenda_desc = $fila_c->prenda_descrip;
+  $prenda_marca = $fila_c->prenda_marca;
+  $prenda_modelo = $fila_c->prenda_modelo;
+
 
   if ($row1["prestamo_estado"] ==1) {
     $msj_estado="Activo";
@@ -349,7 +352,7 @@ if ($prestamos_total != 0) {
                       <div class="sparkline bar_week <?php echo $color_estado; ?>" style="text-align: center; margin: 0px auto; padding: 12px 16px; width: 10%; font-size: 15px;"><?php echo $row1["codPrestamo"]; ?></div>
                       
                       <div class="stat_text" style="width: 60%; line-height: 22px; padding: 14px 12px;">
-                        <strong style="padding-bottom: 2px;"><?php echo $prenda_desc; ?></strong>
+                        <strong style="padding-bottom: 2px;"><?php echo $prenda_desc." ".$prenda_marca." ".$prenda_modelo; ?></strong>
                         <?php echo dma_shora($row1["fec_prestamo"])." - ".dma_shora($row1["fec_vencim"]); ?>
                       </div>
                       <div style="width: 100%; position: absolute; padding: 5px 8px; color: #C52F61; font-size: 20px; text-align: right; line-height: 4px;">

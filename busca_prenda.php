@@ -108,7 +108,7 @@
 				<!-- id="btnVerPrenda<?php //echo $row1["idPrenda"];?>" -->
 				<td align="center" style="vertical-align: middle;"><?php echo $row1["idPrenda"]; ?></td>
 				<td style="vertical-align: middle;"><a onclick="carga_modal(<?php echo $row1["idPrenda"];?>)" name="verprenda" href="#verprenda" data-toggle="modal" data-original-title="Ver Prenda">
-          <?php echo $row1["prenda_descrip"]." ".$row1["prenda_marca"]; ?>
+          <?php echo $row1["prenda_descrip"]." ".$row1["prenda_marca"]." ".$row1["prenda_modelo"]; ?>
           <br>
           <?php echo $row1["prenda_serie"]; ?>
 					</a>
