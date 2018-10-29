@@ -5,8 +5,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a href="main.php" class="navbar-brand">
-                <img src="assets/img/logo1.png" alt="">
+              <a href="main.php" class="navbar-brand" style="padding-top: 5px;">
+                <!-- <img src="assets/img/logo1.png" alt=""> -->
+                <img src="assets/img/logo2.png">
                 <!-- <div style="padding: 15px;">SOLUCIONES FINANCIERAS</div> -->
               </a>
             </header>
