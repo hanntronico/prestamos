@@ -73,7 +73,7 @@
                         </div>
 
                         <div class="col-lg-2">
-                          <input type="button" class="btn btn-success" name="btnEnviar" id="btnEnviar" value="Enviar">
+                          <input type="button" class="btn btn-success" name="btnEnviar2" id="btnEnviar2" value="Enviar">
                         </div>
 
                       
