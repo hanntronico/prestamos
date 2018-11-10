@@ -5,7 +5,9 @@
 	$link=Conectarse();
 	$loc="location: ".$_POST["pag"].".php";
   $varnull=NULL;
-		
+
+	date_default_timezone_set('America/Lima');
+
 	function fechas_hann($value)
 	{
 		list($dia,$mes,$anio)=explode("/",$value); 
@@ -145,8 +147,27 @@
 				$rs=@mysql_query("set names utf8",$link);
           	@mysql_fetch_array($rs);
 
+
 				$sql="INSERT INTO prestamos (codCliente, codCategoria, fec_prestamo, fec_vencim, cod_usuario, prestamo_estado) 
 							VALUES(".$_POST["idCliente"].",".$_POST["codCateg"].",'".fechas_hann($_POST["fecPrest"])."','".$_POST["fecvenc"]."',".$_POST["idUsu"].",1)";
+
+				// echo $_POST["fecvenc"];
+				// exit();
+
+				// echo fechas_hann($_POST["fecPrest"]);
+				// echo "<br>";
+				// echo "HOY : ".date("Y-m-d");
+				// echo "<br>";
+
+				// if (fechas_hann($_POST["fecPrest"])<=date("Y-m-d")) {
+				// 	echo "es menor o igual que hoy";
+				// }else {
+				// 	echo "es Mayor que hoy";
+				// }
+
+				// echo "<br>";			
+				// echo $sql;
+				// exit();
 
 				@mysql_query($sql,$link);			
 
@@ -181,6 +202,26 @@
 	    			 VALUES ('Intereses generados', ".$idprestamo.",'".fechas_hann($_POST["fecPrest"])."', ".(($_SESSION["catinteres"]/100)*$_POST["totprendas"]).", 0, ".((1+($_SESSION["catinteres"]/100))*$_POST["totprendas"]).", ".$_POST["idUsu"].", 1)";
 
 	      @mysql_query($sql2,$link);
+
+	      if ($_POST["fecvenc"]<=date("Y-m-d")) {
+					  $sql2="INSERT INTO pagos(pago_descrip, 
+					  												 codPrestamo, 
+					  												 fec_pago, 
+					  												 pago_cargo, 
+					  												 pago_abono, 
+					  												 pago_saldo, 
+					  												 cod_usuario, 
+					  												 pago_estado) 
+					   			 VALUES ('Intereses extemporáneo', ".
+					   			         $idprestamo.",'".
+					   			         $_POST["fecvenc"]."', ".
+					   			         "0".", 0, ".
+					   			         ((1+($_SESSION["catinteres"]/100))*$_POST["totprendas"]).", ".$_POST["idUsu"].", 2)";
+
+	 				  // echo $sql2;  			
+					  @mysql_query($sql2,$link);
+				}
+
 
 
 			}
@@ -460,5 +501,5 @@
 									
 	}
 
-	header("location: main.php?msn=".$msn);
+	// header("location: main.php?msn=".$msn);
 ?>

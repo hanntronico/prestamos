@@ -325,7 +325,7 @@ if ($prestamos_total != 0) {
                       FROM detalle_prestamo, prendas 
                       WHERE detalle_prestamo.idPrenda = prendas.idPrenda 
                       AND codPrestamo = ".$row1["codPrestamo"]." ORDER BY prendas.idPrenda ASC LIMIT 1",$link);
-  echo $row1["codPrestamo"];
+  // echo $row1["codPrestamo"];
   $fila_c=@mysql_fetch_object($resulty);
   $prenda_desc = $fila_c->prenda_descrip;
   $prenda_marca = $fila_c->prenda_marca;

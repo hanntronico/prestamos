@@ -189,7 +189,7 @@
                         </div>
                       </div>
                       <div class="form-group" style="margin-bottom: 4px;">
-                        <label class="col-lg-3">Monto del préstamo :</label>
+                        <label class="col-lg-3" style="font-size: 13px;">Monto del préstamo :</label>
                         <div class="col-lg-9">
                           <?php echo "S/ ".number_format($totmonto, 2, '.', ''); ?>
                         </div>
@@ -272,17 +272,22 @@
                       <nav style="padding: 15px;">
 
                         <?php 
-                          $sql="SELECT pago_cargo FROM pagos WHERE codprestamo = ".$_GET["id"]." ORDER BY codPago DESC LIMIT 1";
-                          $res=hannquery($sql,$link);
-                          $filita=@mysql_fetch_array($res);
-                          if ($filita[0]>0.00) { 
+                          // $sql="SELECT pago_cargo FROM pagos WHERE codprestamo = ".$_GET["id"]." ORDER BY codPago DESC LIMIT 1";
+                          // echo $sql;
+                          // $res=hannquery($sql,$link);
+                          // $filita=@mysql_fetch_array($res);
+                          // if ($filita[0]>0.00) { 
+                          $sql = "SELECT count(*) FROM pagos WHERE codPrestamo = ".$_GET["id"]." and pago_estado=2" ;
+                          echo $sql; 
+
+
                         ?>
-                        
-                          <a id="pagointeres" data-toggle="modal" data-content="Pagar interés" data-placement="bottom" class="btn btn-danger btn-round btn-grad" href="#pagarinteres" style="font-size: 12px;">
+                       
+                          <a id='pagointeres' data-toggle='modal' data-content='Pagar interés' data-placement='bottom' class='btn btn-danger btn-round btn-grad' href='#pagarinteres' style='font-size: 12px;'>
                             <i class="fa fa-money"></i>
                             Pagar Interés
                           </a>  
-                        <?php } ?>
+                        <?php //} ?>
                         
                         <!-- <a href="javascript:;" class="btn btn-danger btn-round btn-grad" style="font-size: 12px;"> -->
                         <a id="pagarliquidar" data-toggle="modal" data-content="Liquidar" data-placement="bottom" class="btn btn-danger btn-round btn-grad" href="#liquidar" style="font-size: 12px;">  
@@ -447,7 +452,7 @@
   $fila=@mysql_fetch_array($rs);
   // $sql="SELECT * FROM prestamos WHERE codCliente = ".$_GET["id"]; 
 
-  $sql1 = "SELECT * FROM pagos WHERE codPrestamo =".$_GET["id"];
+  $sql1 = "SELECT * FROM pagos WHERE pago_estado <> 0 and codPrestamo =".$_GET["id"]." ORDER BY 1";
 
   $res2=@mysql_query($sql1,$link);
 
